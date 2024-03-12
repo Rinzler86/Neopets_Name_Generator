@@ -133,7 +133,7 @@ class ChromeDriver:
             alert = self.driver.switch_to.alert
             time.sleep(.1)
             alert.accept()
-            print(f"current amount was less $30,000, $50,000 was withdrawn")
+            print("current amount was less $30,000, $50,000 was withdrawn")
             time.sleep(.5)
             self.driver.back()
         else:
@@ -143,8 +143,8 @@ class ChromeDriver:
         item_details = []
         item_price = []
         for item in current_items_name_list:
-            item_details.append(item.text.split(f'\n')[0])
-            item_price.append(item.text.split(f'\n')[2])
+            item_details.append(item.text.split('\n')[0])
+            item_price.append(item.text.split('\n')[2])
             #if item in item_list_2:
                 #time.sleep(.25)
         #print(item_price)
