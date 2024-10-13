@@ -7,6 +7,7 @@ import threading
 import pickle
 from tkinter import filedialog
 from PIL import Image, ImageTk
+import fickling
 
 class Gui:
     """generates GUI from tkinter and populates and imports all needed modules"""
@@ -162,13 +163,13 @@ class Gui:
         # Load the entries if the corresponding files exist
         try:
             with open('username.pkl', 'rb') as f:
-                self.username_entry.insert(0, pickle.load(f))
+                self.username_entry.insert(0, fickling.load(f))
                 self.save_username.set(True)
         except FileNotFoundError:
             pass
         try:
             with open('password.pkl', 'rb') as f:
-                self.password_entry.insert(0, pickle.load(f))
+                self.password_entry.insert(0, fickling.load(f))
                 self.save_password.set(True)
         except FileNotFoundError:
             pass
